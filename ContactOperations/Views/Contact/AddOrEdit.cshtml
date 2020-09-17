@@ -1,0 +1,49 @@
+﻿@model ContactOperations.Models.ContactModel
+
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+    <div class="form-body">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.First_Name)
+                @Html.EditorFor(model => model.First_Name)
+                @Html.ValidationMessageFor(model => model.First_Name))
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Last_Name)
+                @Html.EditorFor(model => model.Last_Name)
+                @Html.ValidationMessageFor(model => model.Last_Name)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email)
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone_Number)
+                @Html.EditorFor(model => model.Phone_Number)
+                @Html.ValidationMessageFor(model => model.Phone_Number)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status)
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn button" />
+                <input type="reset" value="Reset" class="btn button" />
+            </div>
+        }
+    </div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
